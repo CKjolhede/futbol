@@ -336,6 +336,33 @@ include Calcuable
   end
 
   def least_accurate_team (season_id)
+    team_ids_game_hash = Hash.new([])
+    games = games_in_season(season_id)
+      games.each do |game|
+        if !team_ids_game_hash.key?(game.team_id)
+          team_ids_game_hash[game.team_id] = []
+          team_ids_game_hash[game.team_id] << game
+        elsif team_ids_game_hash.key?(game.team_id)
+          team_ids_game_hash[game.team_id] << game
+        end
+      end
+      team_shot_percentage_hash = {}
+      team_ids_game_hash.each do |team_id, games|
+        shots = 0
+        goals = 0
+        games.each do |game|
+          shots += game.shots.to_i
+          goals += game.goals.to_i
+        end
+        team_shot_percentage_hash[team_id] = ((goals.to_f / shots.to_f) * 100)
+      end
+      min_shot_percentage = team_shot_percentage_hash.min_by {|team_id, percent| percent}
+      teamid = min_shot_percentage[0]
+      min_team = @read_teams.find do |team|
+        team.team_id == teamid
+      end
+      min_team.teamname
+
   end
 
   def most_tackles (season_id)
