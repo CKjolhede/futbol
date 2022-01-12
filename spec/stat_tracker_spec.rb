@@ -117,7 +117,7 @@ RSpec.describe StatTracker do
   end
 
   it 'test' do
-    expect(@stat_tracker.winningest_coach("20122013")).to be_a String
+    expect(@stat_tracker.winningest_coach("20122013")).to eq("Dan Lacroix")
 
   end
 

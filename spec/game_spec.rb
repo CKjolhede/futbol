@@ -17,7 +17,7 @@ RSpec.describe Game do
     }
     game = Game.new(attributes)
       expect(game).to be_a(Game)
-      expect(game.id).to eq(2012030221)
+      expect(game.game_id).to eq(2012030221)
       expect(game.season).to eq('20122013')
       expect(game.type).to eq('Postseason')
       expect(game.date_time).to eq('5/16/13')
