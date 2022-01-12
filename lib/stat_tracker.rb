@@ -313,18 +313,95 @@ class StatTracker
         games_in_season << game
         end
       end
-  end
-  binding.pry
+    end
+      #need to find coach win perecents for games_in_season
+      coach_games = Hash.new([])
+    games_in_season.each do |game|
+      if !coach_games.key?(game.head_coach)
+        coach_games[game.head_coach] = []
+        coach_games[game.head_coach] << game.result
+      elsif coach_games.key?(game.head_coach)
+        coach_games[game.head_coach] << game.result
+      end
 
-      #e
 
-    #coach listed in games_teams @read_game_teams
-     #find win % of each coach "string" :head_coach
-     #wins listed in games_teams @read_game_team
-    #highest_win_percenet return coach name
+    end
+    coach_win_percent = {}
+      coach_games.each do |coach, win_loss|
+        wins = 0
+        played = 0
+        win_loss.each do |result|
+          if result == "WIN"
+            wins += 1
+            played += 1
+          elsif result == "LOSS" || "TIE"
+            played += 1
+          end
+        end
+        coach_win_percent[coach] = ((wins.to_f / played.to_f) * 100)
+        #result = wins
+      end
+       coach = coach_win_percent.max_by {|coach, percent| percent}
+       coach[0]
+      #!!!binding.pry
+
+    # end
   end
+  #binding.pry
 
   def worst_coach (season_id)
+    game_ids_in_season = []
+    games_in_season = []
+    #season_hash = Hash.new { |hash, key| hash[key] =  }
+    #seasons listed in games csv @read_games
+    #if arg == season_id > games in that season
+    #count times each coach shows up
+    #if coach AND win +1 wins
+    #if coach and loss +1 games played
+    @read_games.each do |game|
+      if season_id == game.season
+        game_ids_in_season << game.game_id
+      end
+    end
+    game_ids_in_season.each do |game_id|
+      @read_game_teams.each do |game|
+        if game_id == game.game_id
+        games_in_season << game
+        end
+      end
+    end
+      #need to find coach win perecents for games_in_season
+      coach_games = Hash.new([])
+    games_in_season.each do |game|
+      if !coach_games.key?(game.head_coach)
+        coach_games[game.head_coach] = []
+        coach_games[game.head_coach] << game.result
+      elsif coach_games.key?(game.head_coach)
+        coach_games[game.head_coach] << game.result
+      end
+
+
+    end
+    coach_win_percent = {}
+      coach_games.each do |coach, win_loss|
+        wins = 0
+        played = 0
+        win_loss.each do |result|
+          if result == "WIN"
+            wins += 1
+            played += 1
+          elsif result == "LOSS" || "TIE"
+            played += 1
+          end
+        end
+        coach_win_percent[coach] = ((wins.to_f / played.to_f) * 100)
+        #result = wins
+      end
+       coach = coach_win_percent.min_by {|coach, percent| percent}
+       coach[0]
+      #!!!binding.pry
+
+    # end
   end
 
   def most_accurate_team (season_id)
