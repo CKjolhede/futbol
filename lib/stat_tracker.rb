@@ -305,8 +305,34 @@ include Calcuable
     coach[0]
   end
 
-  def most_accurate_team (season_id)
-    games_in_season(season_id)
+  def most_accurate_team(season_id)
+    # team_ids_game_hash = team_ids_game
+    team_ids_game_hash = Hash.new([])
+    games = games_in_season(season_id)
+      games.each do |game|
+        if !team_ids_game_hash.key?(game.team_id)
+          team_ids_game_hash[game.team_id] = []
+          team_ids_game_hash[game.team_id] << game
+        elsif team_ids_game_hash.key?(game.team_id)
+          team_ids_game_hash[game.team_id] << game
+        end
+      end
+      team_shot_percentage_hash = {}
+      team_ids_game_hash.each do |team_id, games|
+        shots = 0
+        goals = 0
+        games.each do |game|
+          shots += game.shots.to_i
+          goals += game.goals.to_i
+        end
+        team_shot_percentage_hash[team_id] = ((goals.to_f / shots.to_f) * 100)
+      end
+      max_shot_percentage = team_shot_percentage_hash.max_by {|team_id, percent| percent}
+      teamid = max_shot_percentage[0]
+      max_team = @read_teams.find do |team|
+        team.team_id == teamid
+      end
+      max_team.teamname
   end
 
   def least_accurate_team (season_id)
@@ -319,55 +345,18 @@ include Calcuable
   end
 
   #helpers
-  # def games_in_season(season_id)
-  #   game_ids_in_season = []
-  #   games_in_season_array = []
-  #     @read_games.each do |game|
-  #       if season_id == game.season
-  #         game_ids_in_season << game.game_id
-  #       end
-  #     end
-  #   game_ids_in_season.each do |game_id|
-  #     @read_game_teams.each do |game|
-  #       if game_id == game.game_id
-  #         games_in_season_array << game
-  #       end
-  #     end
-  #   end
-  #   games_in_season_array
-  #   #binding.pry
-  # end
-  # def coach_games(season_id)
-  #   coach_games_hash = Hash.new([])
+
+  # def team_ids_game
+  #   team_ids_game_hash = Hash.new([])
   #   games = games_in_season(season_id)
   #     games.each do |game|
-  #       if !coach_games_hash.key?(game.head_coach)
-  #         coach_games_hash[game.head_coach] = []
-  #         coach_games_hash[game.head_coach] << game.result
-  #       elsif coach_games_hash.key?(game.head_coach)
-  #         coach_games_hash[game.head_coach] << game.result
+  #       if !team_ids_game_hash.key?(game.team_id)
+  #         team_ids_game_hash[game.team_id] = []
+  #         team_ids_game_hash[game.team_id] << game
+  #       elsif team_ids_game_hash.key?(game.team_id)
+  #         team_ids_game_hash[game.team_id] << game
   #       end
   #     end
-  #     coach_games_hash
-  # end
-  # def coach_win_percent(season_id)
-  #   coaches_hash = coach_games(season_id)
-  #   coach_win_percent_hash = {}
-  #     coaches_hash.each do |coach, win_loss|
-  #       wins = 0
-  #       played = 0
-  #       win_loss.each do |result|
-  #         if result == "WIN"
-  #           wins += 1
-  #           played += 1
-  #         elsif result == "LOSS" || "TIE"
-  #           played += 1
-  #         end
-  #       end
-  #       coach_win_percent_hash[coach] = ((wins.to_f / played.to_f) * 100)
-  #     end
-  #     coach_win_percent_hash
-  #
-  #     binding.pry
+  #     team_ids_game_hash
   # end
 end

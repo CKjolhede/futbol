@@ -118,7 +118,10 @@ RSpec.describe StatTracker do
 
   it 'test' do
     expect(@stat_tracker.winningest_coach("20122013")).to eq("Dan Lacroix")
+  end
 
+  it "most accurate team" do
+    expect(@stat_tracker.most_accurate_team("20122013")).to eq("DC United")
   end
 
 

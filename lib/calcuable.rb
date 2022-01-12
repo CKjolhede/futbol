@@ -1,4 +1,5 @@
 module Calcuable
+
   def games_in_season(season_id)
     game_ids_in_season = []
     games_in_season_array = []
@@ -17,6 +18,7 @@ module Calcuable
     games_in_season_array
     #binding.pry
   end
+
   def coach_games(season_id)
     coach_games_hash = Hash.new([])
     games = games_in_season(season_id)
@@ -30,6 +32,7 @@ module Calcuable
       end
       coach_games_hash
   end
+
   def coach_win_percent(season_id)
     coaches_hash = coach_games(season_id)
     coach_win_percent_hash = {}
@@ -47,7 +50,26 @@ module Calcuable
         coach_win_percent_hash[coach] = ((wins.to_f / played.to_f) * 100)
       end
       coach_win_percent_hash
-
-      #binding.pry
   end
+
+
+  def best_season(season_id)
+    season_hash = games(season_id)
+    best_season_hash = {}
+      season_hash.each do |season, win_loss|
+        wins = 0
+        played = 0
+        win_loss.each do |result|
+          if result == "WIN"
+            wins += 1
+            played += 1
+          elsif result == "LOSS" || "TIE"
+            played += 1
+          end
+        end
+        best_season_hash[season] = ((wins.to_f / played.to_f) * 100)
+      end
+      best_season_hash
+  end
+
 end
