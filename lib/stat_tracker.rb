@@ -448,4 +448,21 @@ class StatTracker
       end
       coach_games_hash
   end
+  def coach_win_percent(season_id)
+    coaches_hash = coach_games(season_id)
+    coach_win_percent = {}
+      coaches_hash.each do |coach, win_loss|
+        wins = 0
+        played = 0
+        win_loss.each do |result|
+          if result == "WIN"
+            wins += 1
+            played += 1
+          elsif result == "LOSS" || "TIE"
+            played += 1
+          end
+        end
+        coach_win_percent[coach] = ((wins.to_f / played.to_f) * 100)
+      end
+  end
 end
