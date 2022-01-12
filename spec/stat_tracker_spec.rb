@@ -129,12 +129,52 @@ RSpec.describe StatTracker do
   end
 
   xit "most tackles" do
-
+    expect(@stat_tracker.most_tackles("20122013")).to eq("Whatever")
   end
 
   xit "fewest tackles" do
-
+    expect(@stat_tracker.fewest_tackles("20122013")).to eq("Whatever")
   end
+
+  xit "team info" do #takes team_id as argument
+    expect(@stat_tracker.team_info("20122013")).to eq() #hash
+  end
+
+  xit "best season" do #takes team_id as argument
+    expect(@stat_tracker.best_season("20122013")).to eq() #string
+  end
+
+  xit "worst season" do #takes team_id as argument
+    expect(@stat_tracker.worst_season("20122013")).to eq() #string
+  end
+
+  xit "average win percentage" do #takes team_id as argument
+    expect(@stat_tracker.average_win_percentage("20122013")).to eq() #float
+  end
+
+  xit "most goals scored" do #takes team_id as argument
+    expect(@stat_tracker.most_goals_scored("20122013")).to eq() #integer
+  end
+
+  xit "fewest goals scored" do #takes team_id as argument
+    expect(@stat_tracker.fewest_goals_scored("20122013")).to eq() #integer
+  end
+
+  xit "favorite opponent" do #takes team_id as argument
+    expect(@stat_tracker.favorite_opponeent("20122013")).to eq() #string
+  end
+
+  xit "rival" do #takes team_id as argument
+    expect(@stat_tracker.rival("20122013")).to eq() #string
+  end
+
+
+
+
+
+
+
+
 
 
 end
