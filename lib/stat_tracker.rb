@@ -252,18 +252,20 @@ include Calcuable
 
   def count_of_games_by_season
     @games_by_season = {}
-
-    seasons = @read_games.map do |game|
-      game.season
-    end.uniq
+    seasons = seasons_list
+    # seasons = @read_games.map do |game|
+    #   game.season
+    # end.uniq
+    #binding.pry
     games_seasons = @read_games.map do |game|
       game.season
     end
-    seasons.each do |season|
-      @games_by_season[season] = games_seasons.count(season)
+    seasons.each do |season_id|
+      @games_by_season[season_id] = games_seasons.count(season_id)
     end
 
 
+    #binding.pry
     @games_by_season
   end
   # binding.pry
@@ -461,22 +463,4 @@ include Calcuable
       best_season_percentage[0]
       binding.pry
   end
-
-
-
-  #helpers
-
-  # def team_ids_game
-  #   team_ids_game_hash = Hash.new([])
-  #   games = games_in_season(season_id)
-  #     games.each do |game|
-  #       if !team_ids_game_hash.key?(game.team_id)
-  #         team_ids_game_hash[game.team_id] = []
-  #         team_ids_game_hash[game.team_id] << game
-  #       elsif team_ids_game_hash.key?(game.team_id)
-  #         team_ids_game_hash[game.team_id] << game
-  #       end
-  #     end
-  #     team_ids_game_hash
-  # end
 end

@@ -71,5 +71,3 @@ module Calcuable
       end
       best_season_hash
   end
-
-end
