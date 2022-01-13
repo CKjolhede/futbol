@@ -361,15 +361,37 @@ include Calcuable
       min_team = @read_teams.find do |team|
         team.team_id == teamid
       end
-      min_team.teamname
-
+    min_team.teamname
   end
 
   def most_tackles (season_id)
+    team_ids_game_hash = Hash.new([])
+    games = games_in_season(season_id)
+      games.each do |game|
+        if !team_ids_game_hash.key?(game.team_id)
+          team_ids_game_hash[game.team_id] = []
+          team_ids_game_hash[game.team_id] << game
+        elsif team_ids_game_hash.key?(game.team_id)
+          team_ids_game_hash[game.team_id] << game
+        end
+      end
+
+      team_tackle_hash = {}
+      team_ids_game_hash.each do |team_id, games|
+        tackles = 0
+        games.each do |game|
+          tackles += game.tackles.to_i
+        end
+        team_tackle_hash[team_id] = tackles
+      end
+      max_tackles = team_tackle_hash.max_by {|team_id, tackles| tackles}
+      teamid = max_tackles[0]
+      max_team = @read_teams.find do |team|
+        team.team_id == teamid
+      end
+    max_team.teamname
   end
 
-  def fewest_tackles (season_id)
-  end
 
   #helpers
 

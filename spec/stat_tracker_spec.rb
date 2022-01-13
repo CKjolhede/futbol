@@ -128,12 +128,12 @@ RSpec.describe StatTracker do
    expect(@stat_tracker.least_accurate_team("20122013")).to eq("New York City FC")
   end
 
-  xit "most tackles" do
-    expect(@stat_tracker.most_tackles("20122013")).to eq("Whatever")
+  it "most tackles" do
+    expect(@stat_tracker.most_tackles("20122013")).to eq("FC Cincinnati")
   end
 
-  xit "fewest tackles" do
-    expect(@stat_tracker.fewest_tackles("20122013")).to eq("Whatever")
+  it "fewest tackles" do
+    expect(@stat_tracker.fewest_tackles("20122013")).to eq("Atlanta United")
   end
 
   xit "team info" do #takes team_id as argument
