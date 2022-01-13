@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-01-11T17:35:43-05:00">2022-01-11T17:35:43-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-01-12T15:36:19-05:00">2022-01-12T15:36:19-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="yellow">
-  81.73%
+  81.55%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         63598.27
+         64215.72
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>416</b> relevant lines,
-    <span class="green"><b>340</b> lines covered</span> and
+    <b>412</b> relevant lines,
+    <span class="green"><b>336</b> lines covered</span> and
     <span class="red"><b>76</b> lines missed. </span>
     (<span class="yellow">
-  81.73%
+  81.55%
 </span>
 )
   </div>
@@ -127,12 +127,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#6859718f0d693fc89e258349b379a08675f6f793" class="src_link" title="lib/stat_tracker.rb">lib/stat_tracker.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">95.19 %</td>
-            <td class="cell--number">342</td>
-            <td class="cell--number">187</td>
-            <td class="cell--number">178</td>
+            <td class="green strong cell--number t-file__coverage">95.08 %</td>
+            <td class="cell--number">329</td>
+            <td class="cell--number">183</td>
+            <td class="cell--number">174</td>
             <td class="cell--number">9</td>
-            <td class="cell--number">66139.28</td>
+            <td class="cell--number">67584.93</td>
             
           </tr>
         
@@ -1314,7 +1314,7 @@
     <h3>lib/stat_tracker.rb</h3>
     <h4>
       <span class="green">
-  95.19%
+  95.08%
 </span>
 
       lines covered
@@ -1323,8 +1323,8 @@
     
 
     <div class="t-line-summary">
-      <b>187</b> relevant lines.
-      <span class="green"><b>178</b> lines covered</span> and
+      <b>183</b> relevant lines.
+      <span class="green"><b>174</b> lines covered</span> and
       <span class="red"><b>9</b> lines missed.</span>
     </div>
 
@@ -1408,7 +1408,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">require &#39;./lib/calcuable&#39;</code>
           </li>
         </div>
       
@@ -1430,7 +1430,7 @@
 
             
 
-            <code class="ruby">class StatTracker</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -1441,7 +1441,7 @@
 
             
 
-            <code class="ruby">  attr_reader :locations</code>
+            <code class="ruby">class StatTracker</code>
           </li>
         </div>
       
@@ -1452,7 +1452,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">include Calcuable</code>
           </li>
         </div>
       
@@ -1463,7 +1463,7 @@
 
             
 
-            <code class="ruby">  def initialize(locations)</code>
+            <code class="ruby">  attr_reader :locations</code>
           </li>
         </div>
       
@@ -1474,7 +1474,7 @@
 
             
 
-            <code class="ruby">    @locations = locations</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -1485,7 +1485,7 @@
 
             
 
-            <code class="ruby">    @games_file = GamesCollection.new(@locations[:games])</code>
+            <code class="ruby">  def initialize(locations)</code>
           </li>
         </div>
       
@@ -1496,7 +1496,7 @@
 
             
 
-            <code class="ruby">    @teams_file = TeamsCollection.new(@locations[:teams])</code>
+            <code class="ruby">    @locations = locations</code>
           </li>
         </div>
       
@@ -1507,7 +1507,7 @@
 
             
 
-            <code class="ruby">    @game_teams_file = GamesTeamsCollection.new(@locations[:game_teams])</code>
+            <code class="ruby">    @games_file = GamesCollection.new(@locations[:games])</code>
           </li>
         </div>
       
@@ -1518,7 +1518,7 @@
 
             
 
-            <code class="ruby">    @read_games = @games_file.read_file</code>
+            <code class="ruby">    @teams_file = TeamsCollection.new(@locations[:teams])</code>
           </li>
         </div>
       
@@ -1529,7 +1529,7 @@
 
             
 
-            <code class="ruby">    @read_teams = @teams_file.read_file</code>
+            <code class="ruby">    @game_teams_file = GamesTeamsCollection.new(@locations[:game_teams])</code>
           </li>
         </div>
       
@@ -1540,7 +1540,7 @@
 
             
 
-            <code class="ruby">    @read_game_teams = @game_teams_file.read_file</code>
+            <code class="ruby">    @read_games = @games_file.read_file</code>
           </li>
         </div>
       
@@ -1551,7 +1551,7 @@
 
             
 
-            <code class="ruby">    #@season_stats = SeasonStats.new</code>
+            <code class="ruby">    @read_teams = @teams_file.read_file</code>
           </li>
         </div>
       
@@ -1562,7 +1562,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    @read_game_teams = @game_teams_file.read_file</code>
           </li>
         </div>
       
@@ -1573,7 +1573,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    #@season_stats = SeasonStats.new</code>
           </li>
         </div>
       
@@ -1584,7 +1584,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -1595,7 +1595,7 @@
 
             
 
-            <code class="ruby">  def self.from_csv(files) #add .to_a changes to an array\</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -1606,7 +1606,7 @@
 
             
 
-            <code class="ruby">    #binding.pry</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -1617,7 +1617,7 @@
 
             
 
-            <code class="ruby">    StatTracker.new(files) #creating an instance of StatTracker holding the hash as locations</code>
+            <code class="ruby">  def self.from_csv(files) #add .to_a changes to an array\</code>
           </li>
         </div>
       
@@ -1628,7 +1628,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    #binding.pry</code>
           </li>
         </div>
       
@@ -1639,7 +1639,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    StatTracker.new(files) #creating an instance of StatTracker holding the hash as locations</code>
           </li>
         </div>
       
@@ -1650,7 +1650,7 @@
 
             
 
-            <code class="ruby">  def highest_total_score</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -1661,7 +1661,7 @@
 
             
 
-            <code class="ruby">    scores_array = [] #helper method later</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -1672,7 +1672,7 @@
 
             
 
-            <code class="ruby">    @read_games.each do |row|</code>
+            <code class="ruby">  def highest_total_score</code>
           </li>
         </div>
       
@@ -1683,7 +1683,7 @@
 
             
 
-            <code class="ruby">      #binding.pry</code>
+            <code class="ruby">    scores_array = [] #helper method later</code>
           </li>
         </div>
       
@@ -1694,7 +1694,7 @@
 
             
 
-            <code class="ruby">      scores_array &lt;&lt; row.home_goals.to_i + row.away_goals.to_i</code>
+            <code class="ruby">    @read_games.each do |row|</code>
           </li>
         </div>
       
@@ -1705,7 +1705,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">      #binding.pry</code>
           </li>
         </div>
       
@@ -1716,7 +1716,7 @@
 
             
 
-            <code class="ruby">    scores_array.max</code>
+            <code class="ruby">      scores_array &lt;&lt; row.home_goals.to_i + row.away_goals.to_i</code>
           </li>
         </div>
       
@@ -1727,7 +1727,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -1738,7 +1738,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    scores_array.max</code>
           </li>
         </div>
       
@@ -1749,7 +1749,7 @@
 
             
 
-            <code class="ruby">  def lowest_total_score</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -1760,7 +1760,7 @@
 
             
 
-            <code class="ruby">    scores_array = [] #helper method later</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -1771,7 +1771,7 @@
 
             
 
-            <code class="ruby">    @read_games.each do |row|</code>
+            <code class="ruby">  def lowest_total_score</code>
           </li>
         </div>
       
@@ -1782,7 +1782,7 @@
 
             
 
-            <code class="ruby">      #binding.pry</code>
+            <code class="ruby">    scores_array = [] #helper method later</code>
           </li>
         </div>
       
@@ -1793,7 +1793,7 @@
 
             
 
-            <code class="ruby">      scores_array &lt;&lt; row.home_goals.to_i + row.away_goals.to_i</code>
+            <code class="ruby">    @read_games.each do |row|</code>
           </li>
         </div>
       
@@ -1804,7 +1804,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">      #binding.pry</code>
           </li>
         </div>
       
@@ -1815,7 +1815,7 @@
 
             
 
-            <code class="ruby">    scores_array.min</code>
+            <code class="ruby">      scores_array &lt;&lt; row.home_goals.to_i + row.away_goals.to_i</code>
           </li>
         </div>
       
@@ -1826,7 +1826,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -1837,7 +1837,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    scores_array.min</code>
           </li>
         </div>
       
@@ -1848,7 +1848,7 @@
 
             
 
-            <code class="ruby">  def self.from_csv(files)</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -1859,7 +1859,7 @@
 
             
 
-            <code class="ruby">    StatTracker.new(files)</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -1870,7 +1870,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">  def self.from_csv(files)</code>
           </li>
         </div>
       
@@ -1881,7 +1881,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    StatTracker.new(files)</code>
           </li>
         </div>
       
@@ -1892,7 +1892,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -1903,7 +1903,7 @@
 
             
 
-            <code class="ruby">  def count_of_teams</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -1914,7 +1914,7 @@
 
             
 
-            <code class="ruby">    @read_teams.size</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -1925,7 +1925,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">  def count_of_teams</code>
           </li>
         </div>
       
@@ -1936,7 +1936,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    @read_teams.size</code>
           </li>
         </div>
       
@@ -1947,7 +1947,7 @@
 
             
 
-            <code class="ruby">  def percentage_home_wins</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -1958,7 +1958,7 @@
 
             
 
-            <code class="ruby">    games_played = 0</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -1969,7 +1969,7 @@
 
             
 
-            <code class="ruby">    wins = 0</code>
+            <code class="ruby">  def percentage_home_wins</code>
           </li>
         </div>
       
@@ -1980,7 +1980,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    games_played = 0</code>
           </li>
         </div>
       
@@ -1991,7 +1991,7 @@
 
             
 
-            <code class="ruby">     @read_game_teams.each do |game|</code>
+            <code class="ruby">    wins = 0</code>
           </li>
         </div>
       
@@ -2002,7 +2002,7 @@
 
             
 
-            <code class="ruby">      if game.hoa == &quot;home&quot; &amp;&amp; game.result == &quot;WIN&quot;</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2013,7 +2013,7 @@
 
             
 
-            <code class="ruby">        games_played += 1</code>
+            <code class="ruby">     @read_game_teams.each do |game|</code>
           </li>
         </div>
       
@@ -2024,7 +2024,7 @@
 
             
 
-            <code class="ruby">        wins += 1</code>
+            <code class="ruby">      if game.hoa == &quot;home&quot; &amp;&amp; game.result == &quot;WIN&quot;</code>
           </li>
         </div>
       
@@ -2035,7 +2035,7 @@
 
             
 
-            <code class="ruby">      elsif game.hoa == &quot;home&quot; &amp;&amp; game.result == &quot;LOSS&quot;</code>
+            <code class="ruby">        games_played += 1</code>
           </li>
         </div>
       
@@ -2046,7 +2046,7 @@
 
             
 
-            <code class="ruby">        games_played += 1</code>
+            <code class="ruby">        wins += 1</code>
           </li>
         </div>
       
@@ -2057,7 +2057,7 @@
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby">      elsif game.hoa == &quot;home&quot; &amp;&amp; game.result == &quot;LOSS&quot;</code>
           </li>
         </div>
       
@@ -2068,7 +2068,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">        games_played += 1</code>
           </li>
         </div>
       
@@ -2079,7 +2079,7 @@
 
             
 
-            <code class="ruby">      (wins.to_f / games_played.to_f).round(2)</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -2090,7 +2090,7 @@
 
             
 
-            <code class="ruby">   end</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -2101,7 +2101,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      (wins.to_f / games_played.to_f).round(2)</code>
           </li>
         </div>
       
@@ -2112,7 +2112,7 @@
 
             
 
-            <code class="ruby">  def best_offense</code>
+            <code class="ruby">   end</code>
           </li>
         </div>
       
@@ -2123,7 +2123,7 @@
 
             
 
-            <code class="ruby">    hash_team_stats = {}</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2134,7 +2134,7 @@
 
             
 
-            <code class="ruby">    @read_game_teams.each do |row|</code>
+            <code class="ruby">  def best_offense</code>
           </li>
         </div>
       
@@ -2145,7 +2145,7 @@
 
             
 
-            <code class="ruby">      if hash_team_stats[row.team_id].nil?</code>
+            <code class="ruby">    hash_team_stats = {}</code>
           </li>
         </div>
       
@@ -2156,7 +2156,7 @@
 
             
 
-            <code class="ruby">        hash_team_stats[row.team_id] = [row.goals.to_i]</code>
+            <code class="ruby">    @read_game_teams.each do |row|</code>
           </li>
         </div>
       
@@ -2167,7 +2167,7 @@
 
             
 
-            <code class="ruby">      else</code>
+            <code class="ruby">      if hash_team_stats[row.team_id].nil?</code>
           </li>
         </div>
       
@@ -2178,7 +2178,7 @@
 
             
 
-            <code class="ruby">        hash_team_stats[row.team_id] &lt;&lt; row.goals.to_i</code>
+            <code class="ruby">        hash_team_stats[row.team_id] = [row.goals.to_i]</code>
           </li>
         </div>
       
@@ -2189,7 +2189,7 @@
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby">      else</code>
           </li>
         </div>
       
@@ -2200,7 +2200,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">        hash_team_stats[row.team_id] &lt;&lt; row.goals.to_i</code>
           </li>
         </div>
       
@@ -2211,7 +2211,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -2222,7 +2222,7 @@
 
             
 
-            <code class="ruby">    team_stats = average_goals(hash_team_stats)</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -2244,7 +2244,7 @@
 
             
 
-            <code class="ruby">    highest_average_goals = team_stats.max_by {|team_id, team_id_value| team_id_value}</code>
+            <code class="ruby">    team_stats = average_goals(hash_team_stats)</code>
           </li>
         </div>
       
@@ -2266,7 +2266,7 @@
 
             
 
-            <code class="ruby">    @read_teams.find_all do |row|</code>
+            <code class="ruby">    highest_average_goals = team_stats.max_by {|team_id, team_id_value| team_id_value}</code>
           </li>
         </div>
       
@@ -2277,7 +2277,7 @@
 
             
 
-            <code class="ruby">      return row.teamname if highest_average_goals[0] == row.team_id</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2288,7 +2288,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">    @read_teams.find_all do |row|</code>
           </li>
         </div>
       
@@ -2299,7 +2299,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      return row.teamname if highest_average_goals[0] == row.team_id</code>
           </li>
         </div>
       
@@ -2310,7 +2310,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -2321,7 +2321,7 @@
 
             
 
-            <code class="ruby">  def average_goals(argument_1)</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -2332,7 +2332,7 @@
 
             
 
-            <code class="ruby">    result_2 = {}</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2343,7 +2343,7 @@
 
             
 
-            <code class="ruby">    argument_1.each do |key, value|</code>
+            <code class="ruby">  def average_goals(argument_1)</code>
           </li>
         </div>
       
@@ -2354,7 +2354,7 @@
 
             
 
-            <code class="ruby">      result_2[key] = value.sum / value.size.to_f</code>
+            <code class="ruby">    result_2 = {}</code>
           </li>
         </div>
       
@@ -2365,7 +2365,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">    argument_1.each do |key, value|</code>
           </li>
         </div>
       
@@ -2376,7 +2376,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      result_2[key] = value.sum / value.size.to_f</code>
           </li>
         </div>
       
@@ -2387,7 +2387,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -2398,7 +2398,7 @@
 
             
 
-            <code class="ruby">  def worst_offense</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -2409,7 +2409,7 @@
 
             
 
-            <code class="ruby">    hash_team_stats = {}</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2420,7 +2420,7 @@
 
             
 
-            <code class="ruby">    @read_game_teams.each do |row|</code>
+            <code class="ruby">  def worst_offense</code>
           </li>
         </div>
       
@@ -2431,7 +2431,7 @@
 
             
 
-            <code class="ruby">      if hash_team_stats[row.team_id].nil?</code>
+            <code class="ruby">    hash_team_stats = {}</code>
           </li>
         </div>
       
@@ -2442,7 +2442,7 @@
 
             
 
-            <code class="ruby">        hash_team_stats[row.team_id] = [row.goals.to_i]</code>
+            <code class="ruby">    @read_game_teams.each do |row|</code>
           </li>
         </div>
       
@@ -2453,7 +2453,7 @@
 
             
 
-            <code class="ruby">      else</code>
+            <code class="ruby">      if hash_team_stats[row.team_id].nil?</code>
           </li>
         </div>
       
@@ -2464,7 +2464,7 @@
 
             
 
-            <code class="ruby">        hash_team_stats[row.team_id] &lt;&lt; row.goals.to_i</code>
+            <code class="ruby">        hash_team_stats[row.team_id] = [row.goals.to_i]</code>
           </li>
         </div>
       
@@ -2475,7 +2475,7 @@
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby">      else</code>
           </li>
         </div>
       
@@ -2486,7 +2486,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">        hash_team_stats[row.team_id] &lt;&lt; row.goals.to_i</code>
           </li>
         </div>
       
@@ -2497,7 +2497,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -2508,7 +2508,7 @@
 
             
 
-            <code class="ruby">    team_stats = {}</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -2519,7 +2519,7 @@
 
             
 
-            <code class="ruby">    hash_team_stats.each do |key, value|</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2530,7 +2530,7 @@
 
             
 
-            <code class="ruby">      team_stats[key] = value.sum / value.size.to_f</code>
+            <code class="ruby">    team_stats = {}</code>
           </li>
         </div>
       
@@ -2541,7 +2541,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">    hash_team_stats.each do |key, value|</code>
           </li>
         </div>
       
@@ -2552,7 +2552,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      team_stats[key] = value.sum / value.size.to_f</code>
           </li>
         </div>
       
@@ -2563,7 +2563,7 @@
 
             
 
-            <code class="ruby">    lowest_average_goals = team_stats.min_by {|team_id, team_id_value| team_id_value}</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -2585,7 +2585,7 @@
 
             
 
-            <code class="ruby">    @read_teams.find_all do |row|</code>
+            <code class="ruby">    lowest_average_goals = team_stats.min_by {|team_id, team_id_value| team_id_value}</code>
           </li>
         </div>
       
@@ -2596,7 +2596,7 @@
 
             
 
-            <code class="ruby">      return row.teamname if lowest_average_goals[0] == row.team_id</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2607,7 +2607,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">    @read_teams.find_all do |row|</code>
           </li>
         </div>
       
@@ -2618,7 +2618,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      return row.teamname if lowest_average_goals[0] == row.team_id</code>
           </li>
         </div>
       
@@ -2629,7 +2629,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -2640,7 +2640,7 @@
 
             
 
-            <code class="ruby">  def highest_scoring_visitor</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -2651,7 +2651,7 @@
 
             
 
-            <code class="ruby">    hash_for_away_teams = {}</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2662,7 +2662,7 @@
 
             
 
-            <code class="ruby">    @read_games.each do |row|</code>
+            <code class="ruby">  def highest_scoring_visitor</code>
           </li>
         </div>
       
@@ -2673,7 +2673,7 @@
 
             
 
-            <code class="ruby">      if hash_for_away_teams[row.away_team_id].nil?</code>
+            <code class="ruby">    hash_for_away_teams = {}</code>
           </li>
         </div>
       
@@ -2684,7 +2684,7 @@
 
             
 
-            <code class="ruby">        hash_for_away_teams[row.away_team_id] = [row.away_goals.to_i]</code>
+            <code class="ruby">    @read_games.each do |row|</code>
           </li>
         </div>
       
@@ -2695,7 +2695,7 @@
 
             
 
-            <code class="ruby">      else</code>
+            <code class="ruby">      if hash_for_away_teams[row.away_team_id].nil?</code>
           </li>
         </div>
       
@@ -2706,7 +2706,7 @@
 
             
 
-            <code class="ruby">        hash_for_away_teams[row.away_team_id] &lt;&lt; row.away_goals.to_i</code>
+            <code class="ruby">        hash_for_away_teams[row.away_team_id] = [row.away_goals.to_i]</code>
           </li>
         </div>
       
@@ -2717,7 +2717,7 @@
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby">      else</code>
           </li>
         </div>
       
@@ -2728,7 +2728,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">        hash_for_away_teams[row.away_team_id] &lt;&lt; row.away_goals.to_i</code>
           </li>
         </div>
       
@@ -2739,7 +2739,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -2750,7 +2750,7 @@
 
             
 
-            <code class="ruby">    hash_for_average_goals_away = {}</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -2761,7 +2761,7 @@
 
             
 
-            <code class="ruby">    hash_for_away_teams.each do |team_id, team_id_goals|</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2772,7 +2772,7 @@
 
             
 
-            <code class="ruby">      hash_for_average_goals_away[team_id] = team_id_goals.sum / team_id_goals.size.to_f</code>
+            <code class="ruby">    hash_for_average_goals_away = {}</code>
           </li>
         </div>
       
@@ -2783,7 +2783,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">    hash_for_away_teams.each do |team_id, team_id_goals|</code>
           </li>
         </div>
       
@@ -2794,7 +2794,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      hash_for_average_goals_away[team_id] = team_id_goals.sum / team_id_goals.size.to_f</code>
           </li>
         </div>
       
@@ -2805,7 +2805,7 @@
 
             
 
-            <code class="ruby">    away_highest_average = hash_for_average_goals_away.max_by {|team_id, team_id_goals| team_id_goals}</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -2827,7 +2827,7 @@
 
             
 
-            <code class="ruby">    @read_teams.find_all do |row|</code>
+            <code class="ruby">    away_highest_average = hash_for_average_goals_away.max_by {|team_id, team_id_goals| team_id_goals}</code>
           </li>
         </div>
       
@@ -2838,7 +2838,7 @@
 
             
 
-            <code class="ruby">      return row.teamname if away_highest_average[0] == row.team_id</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2849,7 +2849,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">    @read_teams.find_all do |row|</code>
           </li>
         </div>
       
@@ -2860,7 +2860,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      return row.teamname if away_highest_average[0] == row.team_id</code>
           </li>
         </div>
       
@@ -2871,7 +2871,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -2882,7 +2882,7 @@
 
             
 
-            <code class="ruby">  def highest_scoring_home_team</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -2893,7 +2893,7 @@
 
             
 
-            <code class="ruby">    hash_for_home_teams = {}</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2904,7 +2904,7 @@
 
             
 
-            <code class="ruby">    @read_games.each do |row|</code>
+            <code class="ruby">  def highest_scoring_home_team</code>
           </li>
         </div>
       
@@ -2915,7 +2915,7 @@
 
             
 
-            <code class="ruby">      if hash_for_home_teams[row.home_team_id].nil?</code>
+            <code class="ruby">    hash_for_home_teams = {}</code>
           </li>
         </div>
       
@@ -2926,7 +2926,7 @@
 
             
 
-            <code class="ruby">        hash_for_home_teams[row.home_team_id] = [row.home_goals.to_i]</code>
+            <code class="ruby">    @read_games.each do |row|</code>
           </li>
         </div>
       
@@ -2937,7 +2937,7 @@
 
             
 
-            <code class="ruby">      else</code>
+            <code class="ruby">      if hash_for_home_teams[row.home_team_id].nil?</code>
           </li>
         </div>
       
@@ -2948,7 +2948,7 @@
 
             
 
-            <code class="ruby">        hash_for_home_teams[row.home_team_id] &lt;&lt; row.home_goals.to_i</code>
+            <code class="ruby">        hash_for_home_teams[row.home_team_id] = [row.home_goals.to_i]</code>
           </li>
         </div>
       
@@ -2959,7 +2959,7 @@
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby">      else</code>
           </li>
         </div>
       
@@ -2970,7 +2970,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">        hash_for_home_teams[row.home_team_id] &lt;&lt; row.home_goals.to_i</code>
           </li>
         </div>
       
@@ -2981,7 +2981,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -2992,7 +2992,7 @@
 
             
 
-            <code class="ruby">    hash_for_average_goals_home = {}</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -3003,7 +3003,7 @@
 
             
 
-            <code class="ruby">    hash_for_home_teams.each do |team_id, team_id_goals|</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -3014,7 +3014,7 @@
 
             
 
-            <code class="ruby">      hash_for_average_goals_home[team_id] = team_id_goals.sum / team_id_goals.size.to_f</code>
+            <code class="ruby">    hash_for_average_goals_home = {}</code>
           </li>
         </div>
       
@@ -3025,7 +3025,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">    hash_for_home_teams.each do |team_id, team_id_goals|</code>
           </li>
         </div>
       
@@ -3036,7 +3036,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      hash_for_average_goals_home[team_id] = team_id_goals.sum / team_id_goals.size.to_f</code>
           </li>
         </div>
       
@@ -3047,7 +3047,7 @@
 
             
 
-            <code class="ruby">    home_highest_average = hash_for_average_goals_home.max_by {|team_id, team_id_goals| team_id_goals}</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -3069,7 +3069,7 @@
 
             
 
-            <code class="ruby">    @read_teams.find_all do |row|</code>
+            <code class="ruby">    home_highest_average = hash_for_average_goals_home.max_by {|team_id, team_id_goals| team_id_goals}</code>
           </li>
         </div>
       
@@ -3080,7 +3080,7 @@
 
             
 
-            <code class="ruby">      return row.teamname if home_highest_average[0] == row.team_id</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -3091,7 +3091,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">    @read_teams.find_all do |row|</code>
           </li>
         </div>
       
@@ -3102,7 +3102,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      return row.teamname if home_highest_average[0] == row.team_id</code>
           </li>
         </div>
       
@@ -3113,7 +3113,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -3124,7 +3124,7 @@
 
             
 
-            <code class="ruby">  def lowest_scoring_visitor</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -3135,7 +3135,7 @@
 
             
 
-            <code class="ruby">    hash_for_away_teams = {}</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -3146,7 +3146,7 @@
 
             
 
-            <code class="ruby">    @read_games.each do |row|</code>
+            <code class="ruby">  def lowest_scoring_visitor</code>
           </li>
         </div>
       
@@ -3157,7 +3157,7 @@
 
             
 
-            <code class="ruby">      if hash_for_away_teams[row.away_team_id].nil?</code>
+            <code class="ruby">    hash_for_away_teams = {}</code>
           </li>
         </div>
       
@@ -3168,7 +3168,7 @@
 
             
 
-            <code class="ruby">        hash_for_away_teams[row.away_team_id] = [row.away_goals.to_i]</code>
+            <code class="ruby">    @read_games.each do |row|</code>
           </li>
         </div>
       
@@ -3179,7 +3179,7 @@
 
             
 
-            <code class="ruby">      else</code>
+            <code class="ruby">      if hash_for_away_teams[row.away_team_id].nil?</code>
           </li>
         </div>
       
@@ -3190,7 +3190,7 @@
 
             
 
-            <code class="ruby">        hash_for_away_teams[row.away_team_id] &lt;&lt; row.away_goals.to_i</code>
+            <code class="ruby">        hash_for_away_teams[row.away_team_id] = [row.away_goals.to_i]</code>
           </li>
         </div>
       
@@ -3201,7 +3201,7 @@
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby">      else</code>
           </li>
         </div>
       
@@ -3212,7 +3212,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">        hash_for_away_teams[row.away_team_id] &lt;&lt; row.away_goals.to_i</code>
           </li>
         </div>
       
@@ -3223,7 +3223,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -3234,7 +3234,7 @@
 
             
 
-            <code class="ruby">    hash_for_average_goals_away = {}</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -3245,7 +3245,7 @@
 
             
 
-            <code class="ruby">    hash_for_away_teams.each do |team_id, team_id_goals|</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -3256,7 +3256,7 @@
 
             
 
-            <code class="ruby">      hash_for_average_goals_away[team_id] = team_id_goals.sum / team_id_goals.size.to_f</code>
+            <code class="ruby">    hash_for_average_goals_away = {}</code>
           </li>
         </div>
       
@@ -3267,7 +3267,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">    hash_for_away_teams.each do |team_id, team_id_goals|</code>
           </li>
         </div>
       
@@ -3278,7 +3278,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      hash_for_average_goals_away[team_id] = team_id_goals.sum / team_id_goals.size.to_f</code>
           </li>
         </div>
       
@@ -3289,7 +3289,7 @@
 
             
 
-            <code class="ruby">    away_lowest_average = hash_for_average_goals_away.min_by {|team_id, team_id_goals| team_id_goals}</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -3311,7 +3311,7 @@
 
             
 
-            <code class="ruby">    @read_teams.find_all do |row|</code>
+            <code class="ruby">    away_lowest_average = hash_for_average_goals_away.min_by {|team_id, team_id_goals| team_id_goals}</code>
           </li>
         </div>
       
@@ -3322,7 +3322,7 @@
 
             
 
-            <code class="ruby">      return row.teamname if away_lowest_average[0] == row.team_id</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -3333,7 +3333,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">    @read_teams.find_all do |row|</code>
           </li>
         </div>
       
@@ -3344,7 +3344,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      return row.teamname if away_lowest_average[0] == row.team_id</code>
           </li>
         </div>
       
@@ -3355,7 +3355,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -3366,7 +3366,7 @@
 
             
 
-            <code class="ruby">  def lowest_scoring_home_team</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -3377,7 +3377,7 @@
 
             
 
-            <code class="ruby">    hash_for_home_teams = {}</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -3388,7 +3388,7 @@
 
             
 
-            <code class="ruby">    @read_games.each do |row|</code>
+            <code class="ruby">  def lowest_scoring_home_team</code>
           </li>
         </div>
       
@@ -3399,7 +3399,7 @@
 
             
 
-            <code class="ruby">      if hash_for_home_teams[row.home_team_id].nil?</code>
+            <code class="ruby">    hash_for_home_teams = {}</code>
           </li>
         </div>
       
@@ -3410,7 +3410,7 @@
 
             
 
-            <code class="ruby">        hash_for_home_teams[row.home_team_id] = [row.home_goals.to_i]</code>
+            <code class="ruby">    @read_games.each do |row|</code>
           </li>
         </div>
       
@@ -3421,7 +3421,7 @@
 
             
 
-            <code class="ruby">      else</code>
+            <code class="ruby">      if hash_for_home_teams[row.home_team_id].nil?</code>
           </li>
         </div>
       
@@ -3432,7 +3432,7 @@
 
             
 
-            <code class="ruby">        hash_for_home_teams[row.home_team_id] &lt;&lt; row.home_goals.to_i</code>
+            <code class="ruby">        hash_for_home_teams[row.home_team_id] = [row.home_goals.to_i]</code>
           </li>
         </div>
       
@@ -3443,7 +3443,7 @@
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby">      else</code>
           </li>
         </div>
       
@@ -3454,7 +3454,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">        hash_for_home_teams[row.home_team_id] &lt;&lt; row.home_goals.to_i</code>
           </li>
         </div>
       
@@ -3465,7 +3465,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -3476,7 +3476,7 @@
 
             
 
-            <code class="ruby">    hash_for_average_goals_home = {}</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -3487,7 +3487,7 @@
 
             
 
-            <code class="ruby">    hash_for_home_teams.each do |team_id, team_id_goals|</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -3498,7 +3498,7 @@
 
             
 
-            <code class="ruby">      hash_for_average_goals_home[team_id] = team_id_goals.sum / team_id_goals.size.to_f</code>
+            <code class="ruby">    hash_for_average_goals_home = {}</code>
           </li>
         </div>
       
@@ -3509,7 +3509,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">    hash_for_home_teams.each do |team_id, team_id_goals|</code>
           </li>
         </div>
       
@@ -3520,7 +3520,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      hash_for_average_goals_home[team_id] = team_id_goals.sum / team_id_goals.size.to_f</code>
           </li>
         </div>
       
@@ -3531,7 +3531,7 @@
 
             
 
-            <code class="ruby">    home_lowest_average = hash_for_average_goals_home.min_by {|team_id, team_id_goals| team_id_goals}</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -3553,7 +3553,7 @@
 
             
 
-            <code class="ruby">    @read_teams.find_all do |row|</code>
+            <code class="ruby">    home_lowest_average = hash_for_average_goals_home.min_by {|team_id, team_id_goals| team_id_goals}</code>
           </li>
         </div>
       
@@ -3564,7 +3564,7 @@
 
             
 
-            <code class="ruby">      return row.teamname if home_lowest_average[0] == row.team_id</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -3575,7 +3575,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">    @read_teams.find_all do |row|</code>
           </li>
         </div>
       
@@ -3586,7 +3586,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      return row.teamname if home_lowest_average[0] == row.team_id</code>
           </li>
         </div>
       
@@ -3597,7 +3597,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -3608,7 +3608,7 @@
 
             
 
-            <code class="ruby">  def percentage_ties</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -3619,7 +3619,7 @@
 
             
 
-            <code class="ruby">    games_played = 0</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -3630,7 +3630,7 @@
 
             
 
-            <code class="ruby">    ties = 0</code>
+            <code class="ruby">  def percentage_ties</code>
           </li>
         </div>
       
@@ -3641,7 +3641,7 @@
 
             
 
-            <code class="ruby">     @read_game_teams.each do |game|</code>
+            <code class="ruby">    games_played = 0</code>
           </li>
         </div>
       
@@ -3652,7 +3652,7 @@
 
             
 
-            <code class="ruby">      if game.result == &quot;TIE&quot;</code>
+            <code class="ruby">    ties = 0</code>
           </li>
         </div>
       
@@ -3663,7 +3663,7 @@
 
             
 
-            <code class="ruby">        games_played += 1</code>
+            <code class="ruby">     @read_game_teams.each do |game|</code>
           </li>
         </div>
       
@@ -3674,7 +3674,7 @@
 
             
 
-            <code class="ruby">        ties += 1</code>
+            <code class="ruby">      if game.result == &quot;TIE&quot;</code>
           </li>
         </div>
       
@@ -3685,7 +3685,7 @@
 
             
 
-            <code class="ruby">      else</code>
+            <code class="ruby">        games_played += 1</code>
           </li>
         </div>
       
@@ -3696,7 +3696,7 @@
 
             
 
-            <code class="ruby">        games_played += 1</code>
+            <code class="ruby">        ties += 1</code>
           </li>
         </div>
       
@@ -3707,7 +3707,7 @@
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby">      else</code>
           </li>
         </div>
       
@@ -3718,7 +3718,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">        games_played += 1</code>
           </li>
         </div>
       
@@ -3729,7 +3729,7 @@
 
             
 
-            <code class="ruby">      (ties.to_f / games_played.to_f).round(2)</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -3740,7 +3740,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -3751,7 +3751,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      (ties.to_f / games_played.to_f).round(2)</code>
           </li>
         </div>
       
@@ -3762,7 +3762,7 @@
 
             
 
-            <code class="ruby">  def percentage_visitor_wins</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -3773,7 +3773,7 @@
 
             
 
-            <code class="ruby">    games_played = 0</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -3784,7 +3784,7 @@
 
             
 
-            <code class="ruby">    wins = 0</code>
+            <code class="ruby">  def percentage_visitor_wins</code>
           </li>
         </div>
       
@@ -3795,7 +3795,7 @@
 
             
 
-            <code class="ruby">     @read_games.each do |game|</code>
+            <code class="ruby">    games_played = 0</code>
           </li>
         </div>
       
@@ -3806,7 +3806,7 @@
 
             
 
-            <code class="ruby">      if game.away_goals.to_i &gt; game.home_goals.to_i</code>
+            <code class="ruby">    wins = 0</code>
           </li>
         </div>
       
@@ -3817,7 +3817,7 @@
 
             
 
-            <code class="ruby">        games_played += 1</code>
+            <code class="ruby">     @read_games.each do |game|</code>
           </li>
         </div>
       
@@ -3828,7 +3828,7 @@
 
             
 
-            <code class="ruby">        wins += 1</code>
+            <code class="ruby">      if game.away_goals.to_i &gt; game.home_goals.to_i</code>
           </li>
         </div>
       
@@ -3839,7 +3839,7 @@
 
             
 
-            <code class="ruby">      elsif</code>
+            <code class="ruby">        games_played += 1</code>
           </li>
         </div>
       
@@ -3850,7 +3850,7 @@
 
             
 
-            <code class="ruby">        games_played += 1</code>
+            <code class="ruby">        wins += 1</code>
           </li>
         </div>
       
@@ -3861,7 +3861,7 @@
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby">      elsif</code>
           </li>
         </div>
       
@@ -3872,7 +3872,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">        games_played += 1</code>
           </li>
         </div>
       
@@ -3883,7 +3883,7 @@
 
             
 
-            <code class="ruby">    # binding.pry</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -3894,7 +3894,7 @@
 
             
 
-            <code class="ruby">      (wins.to_f / games_played.to_f).round(2)</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -3905,7 +3905,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    # binding.pry</code>
           </li>
         </div>
       
@@ -3916,7 +3916,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      (wins.to_f / games_played.to_f).round(2)</code>
           </li>
         </div>
       
@@ -3927,7 +3927,7 @@
 
             
 
-            <code class="ruby">  def percentage_ties</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -3938,7 +3938,7 @@
 
             
 
-            <code class="ruby">    games_played = 0</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -3949,7 +3949,7 @@
 
             
 
-            <code class="ruby">    wins = 0</code>
+            <code class="ruby">  def percentage_ties</code>
           </li>
         </div>
       
@@ -3960,7 +3960,7 @@
 
             
 
-            <code class="ruby">     @read_games.each do |game|</code>
+            <code class="ruby">    games_played = 0</code>
           </li>
         </div>
       
@@ -3971,7 +3971,7 @@
 
             
 
-            <code class="ruby">      if game.away_goals.to_i == game.home_goals.to_i</code>
+            <code class="ruby">    wins = 0</code>
           </li>
         </div>
       
@@ -3982,7 +3982,7 @@
 
             
 
-            <code class="ruby">        games_played += 1</code>
+            <code class="ruby">     @read_games.each do |game|</code>
           </li>
         </div>
       
@@ -3993,7 +3993,7 @@
 
             
 
-            <code class="ruby">        wins += 1</code>
+            <code class="ruby">      if game.away_goals.to_i == game.home_goals.to_i</code>
           </li>
         </div>
       
@@ -4004,7 +4004,7 @@
 
             
 
-            <code class="ruby">      elsif</code>
+            <code class="ruby">        games_played += 1</code>
           </li>
         </div>
       
@@ -4015,7 +4015,7 @@
 
             
 
-            <code class="ruby">        games_played += 1</code>
+            <code class="ruby">        wins += 1</code>
           </li>
         </div>
       
@@ -4026,7 +4026,7 @@
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby">      elsif</code>
           </li>
         </div>
       
@@ -4037,7 +4037,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">        games_played += 1</code>
           </li>
         </div>
       
@@ -4048,7 +4048,7 @@
 
             
 
-            <code class="ruby">    # binding.pry</code>
+            <code class="ruby">      end</code>
           </li>
         </div>
       
@@ -4059,7 +4059,7 @@
 
             
 
-            <code class="ruby">      (wins.to_f / games_played.to_f).round(2)</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -4070,7 +4070,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">    # binding.pry</code>
           </li>
         </div>
       
@@ -4081,7 +4081,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      (wins.to_f / games_played.to_f).round(2)</code>
           </li>
         </div>
       
@@ -4092,7 +4092,7 @@
 
             
 
-            <code class="ruby">  def count_of_games_by_season</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -4103,7 +4103,7 @@
 
             
 
-            <code class="ruby">    @games_by_season = {}</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -4114,7 +4114,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  def count_of_games_by_season</code>
           </li>
         </div>
       
@@ -4125,7 +4125,7 @@
 
             
 
-            <code class="ruby">    seasons = @read_games.map do |game|</code>
+            <code class="ruby">    @games_by_season = {}</code>
           </li>
         </div>
       
@@ -4136,7 +4136,7 @@
 
             
 
-            <code class="ruby">      game.season</code>
+            <code class="ruby">    seasons = seasons_list</code>
           </li>
         </div>
       
@@ -4147,7 +4147,7 @@
 
             
 
-            <code class="ruby">    end.uniq</code>
+            <code class="ruby">    # seasons = @read_games.map do |game|</code>
           </li>
         </div>
       
@@ -4158,7 +4158,7 @@
 
             
 
-            <code class="ruby">    games_seasons = @read_games.map do |game|</code>
+            <code class="ruby">    #   game.season</code>
           </li>
         </div>
       
@@ -4169,7 +4169,7 @@
 
             
 
-            <code class="ruby">      game.season</code>
+            <code class="ruby">    # end.uniq</code>
           </li>
         </div>
       
@@ -4180,7 +4180,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">    #binding.pry</code>
           </li>
         </div>
       
@@ -4191,7 +4191,7 @@
 
             
 
-            <code class="ruby">    seasons.each do |season|</code>
+            <code class="ruby">    games_seasons = @read_games.map do |game|</code>
           </li>
         </div>
       
@@ -4202,7 +4202,7 @@
 
             
 
-            <code class="ruby">      @games_by_season[season] = games_seasons.count(season)</code>
+            <code class="ruby">      game.season</code>
           </li>
         </div>
       
@@ -4224,7 +4224,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    seasons.each do |season|</code>
           </li>
         </div>
       
@@ -4235,7 +4235,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">      @games_by_season[season] = games_seasons.count(season)</code>
           </li>
         </div>
       
@@ -4246,7 +4246,7 @@
 
             
 
-            <code class="ruby">    @games_by_season</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -4257,7 +4257,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -4268,7 +4268,7 @@
 
             
 
-            <code class="ruby">  # binding.pry</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -4279,7 +4279,7 @@
 
             
 
-            <code class="ruby">  def average_goals_per_game</code>
+            <code class="ruby">    binding.pry</code>
           </li>
         </div>
       
@@ -4290,7 +4290,7 @@
 
             
 
-            <code class="ruby">    @total_goals = 0</code>
+            <code class="ruby">    @games_by_season</code>
           </li>
         </div>
       
@@ -4301,7 +4301,7 @@
 
             
 
-            <code class="ruby">    @read_games.each do |home|</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -4312,7 +4312,7 @@
 
             
 
-            <code class="ruby">      @total_goals += (home.home_goals.to_f + home.away_goals.to_f)</code>
+            <code class="ruby">  # binding.pry</code>
           </li>
         </div>
       
@@ -4323,7 +4323,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">  def average_goals_per_game</code>
           </li>
         </div>
       
@@ -4334,7 +4334,7 @@
 
             
 
-            <code class="ruby">    (@total_goals.to_f / @read_games.count).round(2)</code>
+            <code class="ruby">    @total_goals = 0</code>
           </li>
         </div>
       
@@ -4345,7 +4345,7 @@
 
             
 
-            <code class="ruby">    # binding.pry</code>
+            <code class="ruby">    @read_games.each do |home|</code>
           </li>
         </div>
       
@@ -4356,7 +4356,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      @total_goals += (home.home_goals.to_f + home.away_goals.to_f)</code>
           </li>
         </div>
       
@@ -4367,7 +4367,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -4378,7 +4378,7 @@
 
             
 
-            <code class="ruby">  def average_goals_by_season</code>
+            <code class="ruby">    (@total_goals.to_f / @read_games.count).round(2)</code>
           </li>
         </div>
       
@@ -4389,7 +4389,7 @@
 
             
 
-            <code class="ruby">    @seasons = @read_games.map do |game|</code>
+            <code class="ruby">    # binding.pry</code>
           </li>
         </div>
       
@@ -4400,7 +4400,7 @@
 
             
 
-            <code class="ruby">      game.season</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -4411,7 +4411,7 @@
 
             
 
-            <code class="ruby">    end.uniq</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -4422,7 +4422,7 @@
 
             
 
-            <code class="ruby">    total_goals_by_season = Hash.new(0)</code>
+            <code class="ruby">  def average_goals_by_season</code>
           </li>
         </div>
       
@@ -4433,7 +4433,7 @@
 
             
 
-            <code class="ruby">    @read_games.each do |game|</code>
+            <code class="ruby">    @seasons = @read_games.map do |game|</code>
           </li>
         </div>
       
@@ -4444,7 +4444,7 @@
 
             
 
-            <code class="ruby">        total_goals_by_season[game.season] += (game.home_goals.to_f + game.away_goals.to_f)</code>
+            <code class="ruby">      game.season</code>
           </li>
         </div>
       
@@ -4455,7 +4455,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">    end.uniq</code>
           </li>
         </div>
       
@@ -4466,7 +4466,7 @@
 
             
 
-            <code class="ruby">    average_goals_by_season = {} #Hash.new(0)</code>
+            <code class="ruby">    total_goals_by_season = Hash.new(0)</code>
           </li>
         </div>
       
@@ -4477,7 +4477,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">    @read_games.each do |game|</code>
           </li>
         </div>
       
@@ -4488,7 +4488,7 @@
 
             
 
-            <code class="ruby">    # binding.pry</code>
+            <code class="ruby">        total_goals_by_season[game.season] += (game.home_goals.to_f + game.away_goals.to_f)</code>
           </li>
         </div>
       
@@ -4499,7 +4499,7 @@
 
             
 
-            <code class="ruby">    @seasons.each do |w|</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -4510,7 +4510,7 @@
 
             
 
-            <code class="ruby">        average_goals_by_season[w] = (total_goals_by_season[w].to_f / count_of_games_by_season[w].to_f).round(2)</code>
+            <code class="ruby">    average_goals_by_season = {} #Hash.new(0)</code>
           </li>
         </div>
       
@@ -4521,7 +4521,7 @@
 
             
 
-            <code class="ruby">        # average_goals_by_season.transform_values! { |v| (total_goals_by_season[w].to_i / count_of_games_by_season[w].to_i)}</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -4532,7 +4532,7 @@
 
             
 
-            <code class="ruby">        # binding.pry</code>
+            <code class="ruby">    # binding.pry</code>
           </li>
         </div>
       
@@ -4543,7 +4543,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">    @seasons.each do |w|</code>
           </li>
         </div>
       
@@ -4554,7 +4554,7 @@
 
             
 
-            <code class="ruby">    average_goals_by_season</code>
+            <code class="ruby">        average_goals_by_season[w] = (total_goals_by_season[w].to_f / count_of_games_by_season[w].to_f).round(2)</code>
           </li>
         </div>
       
@@ -4565,7 +4565,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">        # average_goals_by_season.transform_values! { |v| (total_goals_by_season[w].to_i / count_of_games_by_season[w].to_i)}</code>
           </li>
         </div>
       
@@ -4576,7 +4576,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">        # binding.pry</code>
           </li>
         </div>
       
@@ -4587,7 +4587,7 @@
 
             
 
-            <code class="ruby">  def winningest_coach (season_id)</code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -4598,7 +4598,7 @@
 
             
 
-            <code class="ruby">    game_ids_in_season = []</code>
+            <code class="ruby">    average_goals_by_season</code>
           </li>
         </div>
       
@@ -4609,7 +4609,7 @@
 
             
 
-            <code class="ruby">    games_in_season = []</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -4620,7 +4620,7 @@
 
             
 
-            <code class="ruby">    #season_hash = Hash.new { |hash, key| hash[key] =  }</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -4631,7 +4631,7 @@
 
             
 
-            <code class="ruby">    #seasons listed in games csv @read_games</code>
+            <code class="ruby">  def winningest_coach (season_id)</code>
           </li>
         </div>
       
@@ -4642,7 +4642,7 @@
 
             
 
-            <code class="ruby">    #if arg == season_id &gt; games in that season</code>
+            <code class="ruby">       coach = coach_win_percent(season_id).max_by {|coach, percent| percent}</code>
           </li>
         </div>
       
@@ -4653,7 +4653,7 @@
 
             
 
-            <code class="ruby">    #count times each coach shows up</code>
+            <code class="ruby">       coach[0]</code>
           </li>
         </div>
       
@@ -4664,7 +4664,7 @@
 
             
 
-            <code class="ruby">    #if coach AND win +1 wins</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -4675,7 +4675,7 @@
 
             
 
-            <code class="ruby">    #if coach and loss +1 games played</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -4686,7 +4686,7 @@
 
             
 
-            <code class="ruby">    @read_games.each do |game|</code>
+            <code class="ruby">  def worst_coach (season_id)</code>
           </li>
         </div>
       
@@ -4697,7 +4697,7 @@
 
             
 
-            <code class="ruby">      if season_id == game.season</code>
+            <code class="ruby">    coach = coach_win_percent(season_id).min_by {|coach, percent| percent}</code>
           </li>
         </div>
       
@@ -4708,7 +4708,7 @@
 
             
 
-            <code class="ruby">        game_ids_in_season &lt;&lt; game.game_id</code>
+            <code class="ruby">    coach[0]</code>
           </li>
         </div>
       
@@ -4719,7 +4719,7 @@
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -4730,7 +4730,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -4741,7 +4741,7 @@
 
             
 
-            <code class="ruby">    game_ids_in_season.each do |game_id|</code>
+            <code class="ruby">  def most_accurate_team (season_id)</code>
           </li>
         </div>
       
@@ -4752,7 +4752,7 @@
 
             
 
-            <code class="ruby">      @read_game_teams.each do |game|</code>
+            <code class="ruby">    games_in_season(season_id)</code>
           </li>
         </div>
       
@@ -4763,7 +4763,7 @@
 
             
 
-            <code class="ruby">        if game_id == game.game_id</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -4774,7 +4774,7 @@
 
             
 
-            <code class="ruby">        games_in_season &lt;&lt; game</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -4785,7 +4785,7 @@
 
             
 
-            <code class="ruby">        end</code>
+            <code class="ruby">  def least_accurate_team (season_id)</code>
           </li>
         </div>
       
@@ -4796,7 +4796,7 @@
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -4807,7 +4807,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -4818,7 +4818,7 @@
 
             
 
-            <code class="ruby">      #need to find coach win perecents for games_in_season</code>
+            <code class="ruby">  def most_tackles (season_id)</code>
           </li>
         </div>
       
@@ -4829,7 +4829,7 @@
 
             
 
-            <code class="ruby">      coach_wins = Hash.new([])</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -4840,7 +4840,7 @@
 
             
 
-            <code class="ruby">    games_in_season.each do |game|</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -4851,7 +4851,7 @@
 
             
 
-            <code class="ruby">      if !coach_wins.key?(game.head_coach)</code>
+            <code class="ruby">  def fewest_tackles (season_id)</code>
           </li>
         </div>
       
@@ -4862,7 +4862,7 @@
 
             
 
-            <code class="ruby">        coach_wins[game.head_coach] = []</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -4873,7 +4873,7 @@
 
             
 
-            <code class="ruby">      end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -4884,7 +4884,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">  def seasons_list</code>
           </li>
         </div>
       
@@ -4895,7 +4895,7 @@
 
             
 
-            <code class="ruby">      binding.pry</code>
+            <code class="ruby">    @read_games.map do |game|</code>
           </li>
         </div>
       
@@ -4906,7 +4906,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">      game.season</code>
           </li>
         </div>
       
@@ -4917,7 +4917,7 @@
 
             
 
-            <code class="ruby">  #binding.pry</code>
+            <code class="ruby">    end.uniq</code>
           </li>
         </div>
       
@@ -4928,7 +4928,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -4939,155 +4939,12 @@
 
             
 
-            <code class="ruby">  def worst_coach (season_id)</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="329">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="330">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="331">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def most_accurate_team (season_id)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="332">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="333">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="334">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def least_accurate_team (season_id)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="335">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="336">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="337">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def most_tackles (season_id)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="338">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="339">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="340">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def fewest_tackles (season_id)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="341">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="342">
             
             
 
@@ -8346,7 +8203,7 @@
 
             
 
-            <code class="ruby">    expect(@stat_tracker.winningest_coach(&quot;20122013&quot;)).to be_a String</code>
+            <code class="ruby">    expect(@stat_tracker.winningest_coach(&quot;20122013&quot;)).to eq(&quot;Dan Lacroix&quot;)</code>
           </li>
         </div>
       
