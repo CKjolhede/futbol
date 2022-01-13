@@ -50,4 +50,18 @@ module Calcuable
 
       #binding.pry
   end
+  def season_games(team_id)
+    seasons_games_hash = Hash.new([])
+    seasons_list.each_do |season_id|
+      games = games_in_season(season_id)
+        games.each do |game|
+          if !coach_games_hash.key?(game.head_coach)
+            coach_games_hash[game.head_coach] = []
+            coach_games_hash[game.head_coach] << game
+          elsif coach_games_hash.key?(game.head_coach)
+            coach_games_hash[game.head_coach] << game
+          end
+        end
+      seasons_games_hash
+  end
 end
