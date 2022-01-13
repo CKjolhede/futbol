@@ -420,6 +420,48 @@ include Calcuable
     min_team.teamname
   end
 
+  def team_info
+
+  end
+
+  def best_season(team_id)
+    seasons = @read_games.map do |game|
+      game.season
+    end.uniq
+    rich_wants_hash = Hash.new
+    seasons.each do |season_id|
+      games = games_in_season(season_id)
+      seasons_game_hash = Hash.new([])
+        games.each do |game|
+          if !seasons_game_hash.key?(game.team_id)
+            seasons_game_hash[game.team_id] = []
+            seasons_game_hash[game.team_id] << game
+          elsif seasons_game_hash.key?(game.team_id)
+            seasons_game_hash[game.team_id] << game
+          end
+        end
+        rich_wants_hash[season_id] = seasons_game_hash
+      end
+
+      season_percent_hash = Hash.new
+      rich_wants_hash.each do |season, games|
+        wins = 0
+        played = 0
+        games.each do |game|
+          if game.result == "WIN" #throwwing an error for result
+            wins += 1
+            played += 1
+          elsif game.result == "LOSS" || "TIE" #throwing an error for result
+            played += 1
+          end
+        end
+        season_percent_hash[season] = ((wins.to_f / played.to_f) * 100)
+      end
+      best_season_percentage = season_percent_hash.max_by {|season, percent| percent}
+      best_season_percentage[0]
+      binding.pry
+  end
+
 
 
   #helpers

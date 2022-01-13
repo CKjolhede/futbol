@@ -140,7 +140,7 @@ RSpec.describe StatTracker do
     expect(@stat_tracker.team_info("20122013")).to eq() #hash
   end
 
-  xit "best season" do #takes team_id as argument
+  it "best season" do #takes team_id as argument
     expect(@stat_tracker.best_season("20122013")).to eq() #string
   end
 
