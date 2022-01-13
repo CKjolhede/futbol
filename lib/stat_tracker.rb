@@ -418,7 +418,6 @@ include Calcuable
         team.team_id == teamid
       end
     min_team.teamname
-    binding.pry
   end
 
 
